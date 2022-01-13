@@ -10,6 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "nim-web-sdk-ng": "^0.2.0"
+    "nim-web-sdk-ng": "^0.3.0"
   }
 }

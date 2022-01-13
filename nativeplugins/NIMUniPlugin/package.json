@@ -1,0 +1,132 @@
+{
+    "name": "NIMUniPlugin",
+    "id": "NIMUniPlugin",
+    "version": "1.0.0",
+    "description": "uni消息推送插件",
+    "_dp_type": "nativeplugin",
+    "_dp_nativeplugin":{
+        "android":
+		{
+			"plugins": [
+			    {
+				 "type": "module",
+				 "name": "NIMUniPlugin-PluginModule",
+				 "class": "com.netease.nimlib.PushModule"
+			    }
+			],
+			"hooksClass": "com.netease.nimlib.PushModule",
+            "integrateType": "aar",
+            "dependencies": [
+				"com.google.gms:google-services:4.2.0",
+				"com.github.bumptech.glide:glide:4.9.0",
+				"com.huawei.agconnect:agcp:1.4.1.300",
+				"com.huawei.hms:push:5.3.0.304",
+				"com.google.firebase:firebase-iid:20.0.2",
+				"com.google.firebase:firebase-common:19.3.0"
+            ],
+            "compileOptions": {
+                "sourceCompatibility": "1.8",
+                "targetCompatibility": "1.8"
+            },
+            "abis": [
+                "armeabi-v7a","arm64-v8a","x86"
+            ],
+            "minSdkVersion": "21",
+	        "useAndroidX": true,
+			"parameters":
+			 {
+				"PUSH_XIAOMI_APPID":
+				{
+					"des": "厂商XIAOMI-app_id，如1234567",
+					"key": "com.xiaomi.push.app_id"
+				},
+				"PUSH_XIAOMI_APPKEY":
+				{
+					"des": "厂商XIAOMI-app_key",
+					"key": "com.xiaomi.push.app_key"
+				},
+				"PUSH_XIAOMI_CERTIFICATENAME":
+				{
+					"des": "厂商XIAOMI-CertificateName",
+					"key": "com.xiaomi.push.certificate_name"
+				},
+				"PUSH_HUAWEI_APPID":
+				{
+					"des": "厂商HUAWEI-app_id",
+					"key": "com.huawei.push.app_id"
+				},
+				"PUSH_HUAWEI_CERTIFICATENAME":
+				{
+					"des": "厂商HUAWEI-CertificateName",
+					"key": "com.huawei.push.certificate_name"
+				},
+				"PUSH_FCM_CERTIFICATENAME":
+				{
+					"des": "厂商FCM-CertificateName",
+					"key": "com.fcm.push.certificate_name"
+				},
+				"PUSH_MEIZU_APPID":
+				{
+					"des": "厂商MEIZU-app_id",
+					"key": "com.meizu.push.app_id"
+				},
+				"PUSH_MEIZU_APPKEY":
+				{
+					"des": "厂商MEIZU-app_key",
+					"key": "com.meizu.push.app_key"
+				},
+				"PUSH_MEIZU_CERTIFICATENAME":
+				{
+					"des": "厂商MEIZU-CertificateName",
+					"key": "com.meizu.push.certificate_name"
+				},
+				"PUSH_VIVO_APPID":
+				{
+					"des": "厂商VIVO-app_id",
+					"key": "com.vivo.push.app_id"
+				},
+				"PUSH_VIVO_APPKEY":
+				{
+					"des": "厂商VIVO-app_key",
+					"key": "com.vivo.push.app_key"
+				},
+				"PUSH_VIVO_CERTIFICATENAME":
+				{
+					"des": "厂商VIVO-CertificateName",
+					"key": "com.vivo.push.certificate_name"
+				},
+				"PUSH_OPPO_APPID":
+				{
+					"des": "厂商OPPO-app_id",
+					"key": "com.oppo.push.app_id"
+				},
+				"PUSH_OPPO_APPKEY":
+				{
+					"des": "厂商OPPO-app_key",
+					"key": "com.oppo.push.app_key"
+				},
+				"PUSH_OPPO_APPSERCET":
+				{
+					"des": "厂商OPPO-app_sercet",
+					"key": "com.oppo.push.app_sercet"
+				},
+				"PUSH_OPPO_CERTIFICATENAME":
+				{
+					"des": "厂商OPPO-CertificateName",
+					"key": "com.oppo.push.certificate_name"
+				}
+			}
+        },
+		"ios": {
+			"plugins": [{
+				"type": "module",
+				"name": "NIMUniPlugin-PluginModule",
+				"class": "NIMPluginModule"
+			}],
+			"hooksClass": "NIMPluginProxy",
+			"integrateType": "framework",
+			"deploymentTarget": "9.0"
+		}
+
+    }
+}

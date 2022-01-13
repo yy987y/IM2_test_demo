@@ -3,6 +3,7 @@
 		<view class="main-text-button">
 			<view class="messageInputField"><input v-model="msg" /></view>
 			<view class="messageSendButton"><button @click="sendMsg">Send</button></view>
+			<view class="messageSendButton"><button @click="test">Test</button></view>
 		</view>
 		<view v-for="(msg, index) in msgList" :key="index">
 			<view
@@ -17,8 +18,6 @@
 				</view>
 			</view>
 		</view>
-
-		
 	</view>
 </template>
 
@@ -38,8 +37,7 @@ export default {
 				url: '/pages/index/index'
 			});
 		} else {
-			this.nim = getApp().globalData.nim;
-			this.nim.on('msg', function(msg) {
+			getApp().globalData.nim.on('msg', function(msg) {
 				console.log('收到了消息', msg);
 				if (msg.from !== getApp().globalData.accid) {
 					_this.msgList.push(_this.buildMsg(msg));
@@ -50,9 +48,9 @@ export default {
 	methods: {
 		async sendMsg() {
 			try {
-				const msg = await this.nim.msg.sendTextMsg({
+				const msg = await getApp().globalData.nim.msg.sendTextMsg({
 					scene: 'p2p',
-					to: 'yanchaodemo02',
+					to: 'yanchaodemo2',
 					body: this.msg
 				});
 				console.log(msg);
@@ -69,14 +67,22 @@ export default {
 				text: msg.body,
 				time: msg.time
 			};
+		},
+		async test() {
+			try {
+				console.log(getApp().globalData.nim);
+				await getApp().globalData.nim.user.setBlack({ account: 'yanchaodemo2', isAdd: true });
+				const list = await getApp().globalData.nim.user.getBlackList();
+				console.log('list', list);
+			} catch (ex) {
+				console.warn(ex);
+			}
 		}
 	}
 };
 </script>
 
 <style lang="scss">
-
-
 .main-text-button {
 	display: flex;
 	left: 0;

@@ -20,6 +20,7 @@ const eventList = [
 
 	// 同步完成
 	'syncdone',
+	"relations",
 
 	'proxyMsg',
 	'syncRoamingMsgs',
@@ -28,8 +29,8 @@ const eventList = [
 	'syncdone',
 	'sessions',
 	'onUpdateMyNameCard',
-	'onUpdateBlackList',
-	'onUpdateMuteList',
+	'updateBlackList',
+	'updateMuteList',
 	'sysMsg',
 	'syncOfflineSysMsgs',
 	'syncFriend',
@@ -39,6 +40,7 @@ const eventList = [
 	'sysMsgUnread',
 	'pushEvents',
 	'teamMsgReceipts',
+	'updateSession',
 
 	'teams',
 	'createTeam',
