@@ -31,17 +31,14 @@ export default {
 			});
 
 			// 初始化事件监听
-			getApp().globalData.eventList.forEach(key => {
-				getApp().globalData.nim.on(key, res => {
-					console.log(`收到 ${key} 事件：`, res ? JSON.parse(JSON.stringify(res)) : res);
-				});
-			});
+			
 			getApp().globalData.nim.on('logined', res => {
 				console.log(`收到 login 事件：`, res ? JSON.parse(JSON.stringify(res)) : res);
 				console.log('收到了 aosPushToken，下一步需要注册给插件', res.aosPushInfo && res.aosPushInfo.pushType);
 				this.regToken(getApp().globalData.nim, res.aosPushInfo);
+				
 				uni.redirectTo({
-					url: '/pages/sessions/sessions'
+					url: '/pages/session_list/sessionList'
 				});
 			});
 

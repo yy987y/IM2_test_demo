@@ -58,6 +58,12 @@ const nim = {};
 
 const accid = '123';
 
+let sessionList=[];
+
+function addSessions(newSessions){
+	this.sessionList=this.sessionList.concat(newSessions);
+}
+
 export default {
 	onLaunch: function() {
 		console.log('App Launch');
@@ -71,7 +77,9 @@ export default {
 	globalData: {
 		eventList,
 		nim,
-		accid
+		accid,
+		sessionList,
+		addSessions
 	}
 };
 </script>

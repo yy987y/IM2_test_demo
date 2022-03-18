@@ -20,7 +20,16 @@
 			}
 
 		}
-	],
+	    ,{
+            "path" : "pages/session_list/sessionList",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",
